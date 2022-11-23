@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <title>Adversarial Multi-task Learning for Joint Detection and Analysis of Viral Retinitis using Conventional Blood and Serology Test Data</title>
+  <meta charset="utf-8">
+  <style>
+    #grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left : 5%;
+    }
+
+    * {
+      list-style: none;
+    }
+
+    .graph {
+      display : flex;
+      position: absolute;
+      width : auto;
+      height : auto;
+      left: auto;
+      top: auto;
+      transform: translate(auto, auto);
+    }
+
+  div {margin : 3% 5% 5% 5%}
+    .graph li { padding : 15% 15% 15% 15%; text-align: center;}
+    .graph li p { font-size: 15px; color: #222;}
+    .graph li div { position : relative; font-size: 15px; color: #89b7ff; 
+      margin-bottom: 0%; margin: 0%; text-align : bottom; width : 50px;
+       height: 150px; background : #ffffff;}
+    .graph li div span { position : absolute; left: 0%; right: 0%; bottom: 0%;
+      background: #5e86ff; }
+    .graph li div p {font-size: 12px; color: #89b7ff; 
+      margin-bottom: 0%;}
+    .graph li div span nobr { position : absolute; left: 0%; right: 0%; bottom: 101%;
+      color: #89b7ff;}
+  </style>
+  <head>
+    <div style = "text-align : center">
+      <img src = "static/img/img1.png" style = "display: block; margin: auto;
+       margin-top: 0px; max-width: 100%; height: auto;" width = "75%">
+      <p style = "font-size:15px; max-width: auto; width : auto; height: auto; margin: auto">The page for 
+      <strong>
+        "Adversarial Multi-task Learning for Joint Detection and Analysis of Viral Retinitis using Conventional Blood and Serology Test Data"
+      </strong>.
+      <br>
+      The research manuscript was submitted to the
+      <a href="https://www.aaojournal.org/">Ophthalmology Journal.</a>
+      </p>
+    <div>
+  </head>
+  <body>
+  <div>
+    <div style = "width : auto; height: auto; text-align : center">
+      <form action="/" method = "POST">
+      <p style = "font-size:19px;">&emsp;&emsp;&emsp;
+      WBC COUNT : <input type = "number" step = "0.001" name = "WBC" style = height:17; placeholder = "WBC COUNT"><br> &emsp;&emsp;&emsp;
+      Neutrophil(#) : <input type = "number" step = "0.001" name = "Neu#" style = height:17; placeholder = "Neutrophil(#)"><br> &emsp;&emsp;&emsp;
+      Neutrophil(%) : <input type = "number" step = "0.001" name = "Neu%" style = height:17; placeholder = "Neutrophil(%)"><br> &emsp;&emsp;&emsp;
+      Lymphocyte(#) : <input type = "number" step = "0.001" name = "Lym#" style = height:17; placeholder = "Lymphocyte(#)"><br> &emsp;&emsp;&emsp;
+      Lymphocyte(%) : <input type = "number" step = "0.001" name = "Lym%" style = height:17; placeholder = "Lymphocyte(%)"><br> &emsp;&emsp;&emsp;
+      Monocyte(#) : <input type = "number" step = "0.001" name = "Mono#" style = height:17; placeholder = "Monocyte(#)"><br> &emsp;&emsp;&emsp;
+      Monocyte(%) : <input type = "number" step = "0.001" name = "Mono%" style = height:17; placeholder = "Monocyte(%)"><br> &emsp;&emsp;&emsp;
+      ESR : <input type = "number" step = "0.001" name = "ESR" style = height:17; placeholder = "ESR"><br> &emsp;&emsp;&emsp;
+      CRP : <input type = "number" step = "0.001" name = "CRP" style = height:17; placeholder = "CRP"><br> &emsp;&emsp;&emsp;
+      VZV IgM : <input type = "number" step = "0.001" name = "VZV IgM" style = height:17; placeholder = "VZV IgM"><br> &emsp;&emsp;&emsp;
+      VZV IgG : <input type = "number" step = "0.001" name = "VZV IgG" style = height:17; placeholder = "VZV IgG"><br> &emsp;&emsp;&emsp;
+      CMV IgM : <input type = "number" step = "0.001" name = "CMV IgM" style = height:17; placeholder = "CMV IgM"><br> &emsp;&emsp;&emsp;
+      CMV IgG : <input type = "number" step = "0.001" name = "CMV IgG" style = height:17; placeholder = "CMV IgG"><br> &emsp;&emsp;&emsp;
+      HSV IgM : <input type = "number" step = "0.001" name = "HSV IgM" style = height:17; placeholder = "HSV IgM"><br> &emsp;&emsp;&emsp;
+      HSV IgG : <input type = "number" step = "0.001" name = "HSV IgG" style = height:17; placeholder = "HSV IgG">&emsp;&emsp;&emsp;
+     </p>
+     
+      &emsp;&emsp;&emsp;
+      <input type = "submit" value = "calculation">
+      &emsp;&emsp;&emsp; 
+      <input type = "reset" value = "reset">
+      
+      <div style= "width: 155%; height:100%; border:1.17px solid; margin-top:20px; 
+      margin-left : -28%"><br>&emsp;&emsp;
+          <span>
+            <b>Results</b><br><br>
+            <hr style="height:0.2px;border:none;background-color:black;">
+          </span>
+          <div id = grid>
+            <div style = "font-size: 17px; margin-left: -16%"><br>
+            Prediction for ARN : <input type = "text" style = height:18px; value = {{ARN}}> &nbsp;(Threshold : 0.442)<br><br><br>      
+            Prediction for CMV : <input type = "text" style = height:18px; value = {{CMV}}> &nbsp;(Threshold : 0.378)<br><br><br>
+            Diagnosis prediction : <strong>{{prob_max}}</strong>
+            </div> 
+            <div style = "margin-top: -5%; margin-left: 30%;">
+              <ul class = "graph">
+                <li>
+                  <div>
+                    <span style = "height:{{prob_total_NIU}}%"> 
+                      <nobr>{{prob_total_NIU}}%</nobr>
+                    </span>
+                  </div>
+                  <p><strong>NIU-PS</strong></p>
+                </li>
+                <li>
+                  <div>
+                    <span style = "height:{{prob_total_ARN}}%"> 
+                      <nobr>{{prob_total_ARN}}%</nobr>
+                    </span>
+                  </div>
+                  <p><strong>ARN</strong></p>
+                </li>
+                <li>
+                  <div>
+                    <span style = "height:{{prob_total_CMV}}%"> 
+                      <nobr>{{prob_total_CMV}}%</nobr>
+                    </span>
+                  </div>
+                  <p><strong>CMV</strong></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nobr>
+      </div>
+    </div>
+    <div>
+      &emsp;&emsp;
+    </div>
+  </div>
+  </form>
+  </body>
+ </html>
