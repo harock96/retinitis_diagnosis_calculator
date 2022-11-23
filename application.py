@@ -234,4 +234,4 @@ def index():
    prob_total_ARN = prob_total_ARN, prob_total_CMV = prob_total_CMV, prob_total_NIU = prob_total_NIU, prob_max = prob_max)
   
 if __name__ == "__main__":
-  application.run(port = 5002, debug = True)
+  application.run()
