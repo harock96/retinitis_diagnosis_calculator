@@ -230,8 +230,8 @@ def index():
       prob_total_CMV -= 1
       prob_total_NIU = 0
 
-  return render_template('demo.html', 'index.html', ARN = test_pred_for_ARN, CMV = test_pred_for_CMV,
+  return render_template('demo.html', ARN = test_pred_for_ARN, CMV = test_pred_for_CMV,
    prob_total_ARN = prob_total_ARN, prob_total_CMV = prob_total_CMV, prob_total_NIU = prob_total_NIU, prob_max = prob_max)
   
 if __name__ == "__main__":
-  application.run(port = "5000", debug=True)
+  application.run(host = '0,0,0,0', port = "5002", debug=True)
